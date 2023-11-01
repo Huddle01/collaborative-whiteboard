@@ -442,12 +442,12 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
-"@huddle01/react@1.0.0-alpha.31":
-  version "1.0.0-alpha.31"
-  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.31.tgz#971cf3c6944c4b76e6de37a24ebd3a9d4b40b9d2"
-  integrity sha512-JJ3ndLZLYWXz0jVpNgncBxecMcgtRY3Hmx39PTe6f9TrjkU8Aj+f/qM2E1bF8pbO9Ndx60LMzXRzf7Pf0gu3Rw==
+"@huddle01/react@1.0.0-alpha.32":
+  version "1.0.0-alpha.32"
+  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.32.tgz#73f5d73504c421239527bd6cd11fd9e91ac9b920"
+  integrity sha512-WaI2wSRcYrRYy9Ynu6wu3XsCr3RjjRSoNnZ8vZ4AZsrVCB61ZXRyaqZDKyM+2N5nLpOqhvELw1Of+poN4YRBEA==
   dependencies:
-    "@huddle01/web-core" "1.0.0-alpha.29"
+    "@huddle01/web-core" "1.0.0-alpha.30"
     "@tanstack/react-query" "^4.32.6"
     "@testing-library/react" "^14.0.0"
     "@testing-library/react-hooks" "^8.0.1"
@@ -467,6 +467,15 @@
   version "1.0.0-alpha.29"
   resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.29.tgz#983045d2aaca207479e8cc5f8cda1d30c0b395d1"
   integrity sha512-gK2CDs9LCopFF0E2bgKxMFRYngGUj5jLpqD4lE0RyRemQwpVFAG8HXH2mPIQpPkqGaLEPj6JfcHQb4mlqHqN8A==
+  dependencies:
+    mediasoup-client "^3.6.98"
+    tslog "^4.9.1"
+    zod "^3.22.1"
+
+"@huddle01/web-core@1.0.0-alpha.30":
+  version "1.0.0-alpha.30"
+  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.30.tgz#5129348ef0af6c30fe13200e622959aed44f54c6"
+  integrity sha512-H3UtQT4p2ZfpK/JwjY84bKROfhlEnyM1HapzkFr4J7N4aCwYk2n/FRj5dbhWLkzfnO1cW8iq3YRj8RsIIJsCWw==
   dependencies:
     mediasoup-client "^3.6.98"
     tslog "^4.9.1"
@@ -1115,6 +1124,11 @@
   integrity sha512-fyrgCaedtvMg9NK3en0pnOYJdtfwxUcNolezkNPUsoX57X8oQk+NkqcvzHXD2uKNij6GXmWU9NDru2IWjrO4BQ==
   dependencies:
     "@babel/runtime" "^7.13.10"
+
+"@remix-run/router@1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.11.0.tgz#e0e45ac3fff9d8a126916f166809825537e9f955"
+  integrity sha512-BHdhcWgeiudl91HvVa2wxqZjSHbheSgIiDvxrF1VjFzBzpTtuDPkOdOi3Iqvc08kXtFkLjhbS+ML9aM8mJS+wQ==
 
 "@tanstack/query-core@4.36.1":
   version "4.36.1"
@@ -3177,6 +3191,21 @@ react-remove-scroll@2.5.5:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
+react-router-dom@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.18.0.tgz#0a50c167209d6e7bd2ed9de200a6579ea4fb1dca"
+  integrity sha512-Ubrue4+Ercc/BoDkFQfc6og5zRQ4A8YxSO3Knsne+eRbZ+IepAsK249XBH/XaFuOYOYr3L3r13CXTLvYt5JDjw==
+  dependencies:
+    "@remix-run/router" "1.11.0"
+    react-router "6.18.0"
+
+react-router@6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.18.0.tgz#32e2bedc318e095a48763b5ed7758e54034cd36a"
+  integrity sha512-vk2y7Dsy8wI02eRRaRmOs9g2o+aE72YCx5q9VasT1N9v+lrdB79tIqrjMfByHiY5+6aYkH2rUa5X839nwWGPDg==
+  dependencies:
+    "@remix-run/router" "1.11.0"
+
 react-style-singleton@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.1.tgz"
@@ -3596,7 +3625,7 @@ use-sidecar@^1.1.2:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
 
-use-sync-external-store@^1.2.0:
+use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
@@ -3775,3 +3804,10 @@ zod@^3.22.1, zod@^3.22.4:
   version "3.22.4"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.22.4.tgz#f31c3a9386f61b1f228af56faa9255e845cf3fff"
   integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==
+
+zustand@^4.4.5:
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.5.tgz#0d5571affb30906b0c07c16557f2779ede9f4d8c"
+  integrity sha512-jgIrBBLKncQW74PA2Lclct3gwD4aPughwGE4FqlXrv3rDqQox7JCn8rwUiFK6ygJcbBAvfTf8fF+ICg7HLD2FQ==
+  dependencies:
+    use-sync-external-store "1.2.0"

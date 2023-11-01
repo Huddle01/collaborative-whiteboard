@@ -8,7 +8,7 @@ const ShowPeers = () => {
     return (
         <>
         {peerIds.map((peerId) => {
-            return <PeerData peerId={peerId} />;
+            return <PeerData peerId={peerId} key={peerId}/>;
           })}
         </>
     )

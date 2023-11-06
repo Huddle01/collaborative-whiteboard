@@ -11,10 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@huddle01/react": "1.0.0-alpha.32",
-    "@huddle01/server-sdk": "1.0.0-alpha.4",
+    "@huddle01/react": "1.0.0-alpha.36",
+    "@huddle01/server-sdk": "1.0.0-alpha.6",
     "@huddle01/web-core": "1.0.0-alpha.29",
     "@tldraw/tldraw": "^2.0.0-canary.647977ceecd0",
+    "clsx": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",

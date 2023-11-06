@@ -13,11 +13,14 @@ import { BasicIcons } from './BasicIcons';
 import VideoElem from './Video';
 import NameEditor from './NameEditor';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import clsx from 'clsx';
 
-const HOST_URL =
-  import.meta.env.MODE === 'development'
-    ? 'ws://localhost:1234'
-    : 'wss://demos.yjs.dev';
+// const HOST_URL =
+//   import.meta.env.MODE === 'development'
+//     ? 'ws://localhost:1234'
+//     : 'wss://demos.yjs.dev';
+
+const HOST_URL = "ws://localhost:1234";
 
 export default function Room() {
   const { roomId } = useParams();
@@ -69,7 +72,7 @@ export default function Room() {
                       alt={metadata?.displayName ?? 'Guest'}
                     />
                   )}
-                  <div className="absolute bottom-2 left-2">
+                  <div className={clsx("absolute bottom-2 left-2 px-2 rounded-lg", isVideoOn ? 'bg-gray-800/60 text-white' : 'text-black')}>
                     {metadata?.displayName ?? 'Guest'}
                   </div>
                 </div>

@@ -26,7 +26,6 @@ const Lobby = () => {
 
   const { joinRoom, state: roomState } = useRoom({
     onJoin: () => {
-        console.log('joined')
       updateMetadata({
         displayName: displayName,
         avatarUrl: `/0.png`,

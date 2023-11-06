@@ -442,22 +442,22 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
-"@huddle01/react@1.0.0-alpha.32":
-  version "1.0.0-alpha.32"
-  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.32.tgz#73f5d73504c421239527bd6cd11fd9e91ac9b920"
-  integrity sha512-WaI2wSRcYrRYy9Ynu6wu3XsCr3RjjRSoNnZ8vZ4AZsrVCB61ZXRyaqZDKyM+2N5nLpOqhvELw1Of+poN4YRBEA==
+"@huddle01/react@1.0.0-alpha.36":
+  version "1.0.0-alpha.36"
+  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.36.tgz#e12313c473ec693afe9437fb2bca712f13f35681"
+  integrity sha512-fwzpgWikB/00UYzJcSNYSxBJLEVvPi1op1YVIZpKPGL7fGihimMlc4REKsNlVMNMcLzlF6T61K/7mdF4c9JRIA==
   dependencies:
-    "@huddle01/web-core" "1.0.0-alpha.30"
+    "@huddle01/web-core" "1.0.0-alpha.33"
     "@tanstack/react-query" "^4.32.6"
     "@testing-library/react" "^14.0.0"
     "@testing-library/react-hooks" "^8.0.1"
     axios "^1.5.1"
     react "18.2.0"
 
-"@huddle01/server-sdk@1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-1.0.0-alpha.4.tgz#cc2a590af77a85b2a5399e3dd54247cee08458aa"
-  integrity sha512-jw0fcYcokdnzddNG8UXbyTn4b7yBfuMhO3Nvn0vMyjaiafpIeggzRufNSaNvvTFLvXQMJhzUyIRSpV8TrYdxFA==
+"@huddle01/server-sdk@1.0.0-alpha.6":
+  version "1.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-1.0.0-alpha.6.tgz#e0e7fbc8572286227f47d26091470be75a571143"
+  integrity sha512-f84O9nSKLxkQZPok9jvOownPc2xYDSEh66bTBQmDsHAHo9P/PRtww4sBuiTOvFg0N9brJKBS91J80krBFHbkEg==
   dependencies:
     axios "^1.5.1"
     jose "^4.14.6"
@@ -472,10 +472,10 @@
     tslog "^4.9.1"
     zod "^3.22.1"
 
-"@huddle01/web-core@1.0.0-alpha.30":
-  version "1.0.0-alpha.30"
-  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.30.tgz#5129348ef0af6c30fe13200e622959aed44f54c6"
-  integrity sha512-H3UtQT4p2ZfpK/JwjY84bKROfhlEnyM1HapzkFr4J7N4aCwYk2n/FRj5dbhWLkzfnO1cW8iq3YRj8RsIIJsCWw==
+"@huddle01/web-core@1.0.0-alpha.33":
+  version "1.0.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.33.tgz#ea3b71d049cac891a196070a68a710e5ac891c26"
+  integrity sha512-Oz1WEihPe+H9OM3XNKCtyBAfpZy93WB+J4h2OIS8M6WWsVEvfjRgDU19PSrl0Qlsj2gDBDVYpl3MOJIntJMw3w==
   dependencies:
     mediasoup-client "^3.6.98"
     tslog "^4.9.1"
@@ -1706,6 +1706,11 @@ cliui@^8.0.1:
     string-width "^4.2.0"
     strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
+
+clsx@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
+  integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
 
 color-convert@^1.9.0:
   version "1.9.3"

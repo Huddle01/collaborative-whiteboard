@@ -37,8 +37,7 @@ const Lobby = () => {
     if (roomState !== 'connected') {
       const getToken = async () => {
         const accessToken = new AccessToken({
-          apiKey:
-            'a6a3e422a20a51efe49bdd8e4fd7b56b397a80a085715c8fca00898e1753',
+          apiKey: import.meta.env.VITE_API_HUDDLE01_API_KEY,
           roomId: roomId as string,
           permissions: {
             admin: true,

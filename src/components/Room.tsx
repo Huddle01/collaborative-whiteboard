@@ -15,11 +15,6 @@ import NameEditor from './NameEditor';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
-// const HOST_URL =
-//   import.meta.env.MODE === 'development'
-//     ? 'ws://localhost:1234'
-//     : 'wss://demos.yjs.dev';
-
 const HOST_URL = import.meta.env.VITE_API_HOST_URL;
 
 export default function Room() {

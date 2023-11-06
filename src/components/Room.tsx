@@ -20,7 +20,7 @@ import clsx from 'clsx';
 //     ? 'ws://localhost:1234'
 //     : 'wss://demos.yjs.dev';
 
-const HOST_URL = "wss://ws-server-zj05.onrender.com";
+const HOST_URL = import.meta.env.VITE_API_HOST_URL;
 
 export default function Room() {
   const { roomId } = useParams();

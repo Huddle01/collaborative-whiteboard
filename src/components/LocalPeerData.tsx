@@ -39,7 +39,7 @@ const LocalPeerData: FC = () => {
       >
         Copy Link
       </button>
-      <Draggable >
+      <Draggable>
         <div className='flex flex-col items-center justify-center' >
           <div className="relative flex w-[10vw] h-28 rounded-lg bg-gray-200 justify-center items-center">
             {isVideoOn ? (

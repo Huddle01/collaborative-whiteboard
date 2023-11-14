@@ -31,7 +31,7 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
 
   return (
     <Draggable>
-      <div className="flex relative w-[10w] h-28 rounded-lg bg-gray-200 justify-center items-center">
+      <div className="flex relative w-[10vw] h-28 rounded-lg bg-gray-200 justify-center items-center">
         {isVideoOn ? (
           <VideoElem track={cam} />
         ) : (

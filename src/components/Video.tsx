@@ -31,7 +31,7 @@ const VideoElem = ({ track }: { track: MediaStreamTrack | null }) => {
 
   return (
     <video
-      className="h-full w-full rounded-lg object-cover -scaleY-100"
+      className="w-full h-full rounded-lg object-cover -scaleY-100"
       ref={videoRef}
       autoPlay
     />

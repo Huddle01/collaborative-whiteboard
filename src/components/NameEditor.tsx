@@ -36,7 +36,7 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
         avatarUrl: '/0.png',
       });
     }
-  }, [displayName]);
+  }, [roomId]);
 
   const createAndJoinRoom = async () => {
     const response = await fetch(
@@ -122,15 +122,15 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
                     </>
                   ) : (
                       <LocalPeerData />
-                  )}
-                </>
-              )}
+                    )}
+                  </>
+                )}
+              </div>
             </div>
+            <ShowPeers />
           </div>
-          <ShowPeers />
         </div>
       </div>
-    </div>
   );
 });
 

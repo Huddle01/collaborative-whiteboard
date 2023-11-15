@@ -1,11 +1,13 @@
 import {
+  useDataMessage,
   useRemoteAudio,
   useRemotePeer,
   useRemoteVideo,
 } from '@huddle01/react/hooks';
 import VideoElem from './Video';
 import Audio from './Audio';
-import Draggable from 'react-draggable';
+import { useState } from 'react';
+import clsx from 'clsx';
 
 interface Props {
   peerId: string;
@@ -27,11 +29,34 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
     peerId,
   });
 
+  const [cursorPosition, setCursorPosition] = useState({
+    top: 0,
+    left: 0,
+  });
+
+  useDataMessage({
+    onMessage(payload, from, label) {
+      if (label === 'cursor' && from === peerId) {
+        const { top, left } = JSON.parse(payload);
+        setCursorPosition({
+          top: top,
+          left: left
+        });
+      }
+    },
+  });
+
   if (!metadata) return null;
 
   return (
-    <Draggable>
-      <div className="flex relative w-[10vw] h-28 rounded-lg bg-gray-200 justify-center items-center">
+    <div
+      style={{
+        position: 'absolute',
+        ...cursorPosition,
+        zIndex: 1000
+      }}
+    >
+      <div className="flex relative w-32 h-28 rounded-lg bg-gray-200 justify-center items-center">
         {isVideoOn ? (
           <VideoElem track={cam} />
         ) : (
@@ -41,12 +66,17 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
             alt={metadata.displayName}
           />
         )}
-        <div className="absolute bottom-2 left-2">
+        <div
+          className={clsx(
+            'absolute bottom-2 left-2 px-2 rounded-lg',
+            isVideoOn ? 'bg-gray-800/60 text-white' : 'text-black'
+          )}
+        >
           {metadata.displayName ?? 'Guest'}
         </div>
         {mic && <Audio track={mic} />}
       </div>
-    </Draggable>
+    </div>
   );
 };
 

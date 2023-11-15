@@ -1,14 +1,14 @@
 import {
+  useDataMessage,
   useLocalAudio,
   useLocalPeer,
   useLocalVideo,
 } from '@huddle01/react/hooks';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import VideoElem from './Video';
 import clsx from 'clsx';
 import { BasicIcons } from './BasicIcons';
 import { useMeetStore } from '../store/meet';
-import Draggable from 'react-draggable';
 
 const LocalPeerData: FC = () => {
   const { displayName } = useMeetStore();
@@ -16,6 +16,13 @@ const LocalPeerData: FC = () => {
   const { track: cam, enableVideo, disableVideo, isVideoOn } = useLocalVideo();
 
   const { enableAudio, disableAudio, isAudioOn } = useLocalAudio();
+
+  const [cursorPosition, setCursorPosition] = useState({
+    top: 0,
+    left: 0,
+  });
+
+  const { sendData } = useDataMessage();
 
   const { updateMetadata } = useLocalPeer<{
     displayName: string;
@@ -29,6 +36,34 @@ const LocalPeerData: FC = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const cursorWidth = 200; // adjust as needed
+      const cursorHeight = 150; // adjust as needed
+      const adjustedTop = Math.min(e.clientY, screenHeight - cursorHeight);
+      const adjustedLeft = Math.min(e.clientX, screenWidth - cursorWidth);
+
+      setCursorPosition({
+        top: adjustedTop + 15,
+        left: adjustedLeft + 15,
+      });
+      sendData({
+        to: '*',
+        payload: JSON.stringify({
+          top: adjustedTop + 15,
+          left: adjustedLeft + 15,
+        }),
+        label: 'cursor',
+      });
+    };
+    document.addEventListener('mousemove', onMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', onMouseMove);
+    };
+  }, []);
+
   return (
     <>
       <button
@@ -39,9 +74,15 @@ const LocalPeerData: FC = () => {
       >
         Copy Link
       </button>
-      <Draggable>
-        <div className='flex flex-col items-center justify-center' >
-          <div className="relative flex w-[10vw] h-28 rounded-lg bg-gray-200 justify-center items-center">
+      <div className="flex flex-col items-center justify-center">
+        <div
+          style={{
+            position: 'absolute',
+            ...cursorPosition,
+            zIndex: 1000,
+          }}
+        >
+          <div className="relative flex w-32 h-28 rounded-lg bg-gray-200 justify-center items-center">
             {isVideoOn ? (
               <VideoElem track={cam} />
             ) : (
@@ -60,26 +101,26 @@ const LocalPeerData: FC = () => {
               {displayName !== '' ? displayName : 'Guest'}
             </div>
           </div>
-          <div className="flex gap-1">
-            <button
-              className="p-1 rounded-lg"
-              onClick={() => {
-                isVideoOn ? disableVideo() : enableVideo();
-              }}
-            >
-              {isVideoOn ? BasicIcons.on.cam : BasicIcons.off.cam}
-            </button>
-            <button
-              className="p-1 rounded-lg"
-              onClick={() => {
-                isAudioOn ? disableAudio() : enableAudio();
-              }}
-            >
-              {isAudioOn ? BasicIcons.on.mic : BasicIcons.off.mic}
-            </button>
-          </div>
         </div>
-      </Draggable>
+        <div className="flex gap-1">
+          <button
+            className="p-1 rounded-lg"
+            onClick={() => {
+              isVideoOn ? disableVideo() : enableVideo();
+            }}
+          >
+            {isVideoOn ? BasicIcons.on.cam : BasicIcons.off.cam}
+          </button>
+          <button
+            className="p-1 rounded-lg"
+            onClick={() => {
+              isAudioOn ? disableAudio() : enableAudio();
+            }}
+          >
+            {isAudioOn ? BasicIcons.on.mic : BasicIcons.off.mic}
+          </button>
+        </div>
+      </div>
     </>
   );
 };

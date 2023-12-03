@@ -2,7 +2,7 @@ import { useLocalPeer, useRoom } from '@huddle01/react/hooks';
 import { track } from '@tldraw/tldraw';
 import ShowPeers from './ShowPeers';
 import { FC, useEffect } from 'react';
-import { AccessToken } from '@huddle01/server-sdk/auth';
+import { AccessToken, Role } from '@huddle01/server-sdk/auth';
 import { useNavigate } from 'react-router-dom';
 import { useMeetStore } from '../store/meet';
 import LocalPeerData from './LocalPeerData';
@@ -20,6 +20,7 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
 
   const { joinRoom, state: roomState } = useRoom({
     onJoin: () => {
+      
       updateMetadata({
         displayName: displayName,
         avatarUrl: `/0.png`,
@@ -53,7 +54,11 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
       }
     );
     const data = await response.json();
+
+    console.log({data});
+    
     const userToken = await createAccessToken(data.data.roomId);
+    console.log("userToken", userToken)
     await joinRoom({
       roomId: data.data.roomId,
       token: userToken,
@@ -62,26 +67,30 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
   };
 
   const createAccessToken = async (userRoomId: string) => {
+    console.log("userRoomId", import.meta.env.VITE_API_HUDDLE01_API_KEY);
     const accessToken = new AccessToken({
-      apiKey: import.meta.env.VITE_API_HUDDLE01_API_KEY,
+      apiKey: import.meta.env.VITE_API_HUDDLE01_API_KEY ?? '',
       roomId: userRoomId,
+      // role: data.previewPeers.length > 0 ? Role.LISTENER : Role.HOST,
+      role: Role.HOST,
       permissions: {
         admin: true,
         canConsume: true,
         canProduce: true,
-        canProduceSources: {
-          cam: true,
-          mic: true,
-          screen: true,
-        },
+        canProduceSources: { cam: true, mic: true, screen: true },
         canRecvData: true,
         canSendData: true,
         canUpdateMetadata: true,
       },
     });
     const userToken = await accessToken.toJwt();
+    console.log("userToken", userToken);
     return userToken;
   };
+
+  // const handleJoinRoom = async () => {
+  //   const token = await createAccessToken()
+  // }
 
   return (
     <div style={{ pointerEvents: 'all', display: 'flex' }}>
@@ -115,22 +124,23 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
                           } else {
                             await createAndJoinRoom();
                           }
+                          // handleJoinRoom();
                         }}
                       >
                         {roomId ? 'Join Meeting' : 'Create Meeting'}
                       </button>
                     </>
                   ) : (
-                      <LocalPeerData />
-                    )}
-                  </>
-                )}
-              </div>
+                    <LocalPeerData />
+                  )}
+                </>
+              )}
             </div>
-            <ShowPeers />
           </div>
+          <ShowPeers />
         </div>
       </div>
+    </div>
   );
 });
 

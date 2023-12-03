@@ -442,28 +442,37 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
-"@huddle01/react@^1.0.0-alpha.40":
-  version "1.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.40.tgz#a847fa8fdcf53aea0a38ebbd1c1cbcac95cede22"
-  integrity sha512-YDBOBFgqk1FBHBGCQBRSjAiv21s0BB3/RPXvO3PgiBxTO6by5hXTDxDVDYjRys1tsRr2iCchlrbygsytKQw3wg==
+"@huddle01/react@^1.0.0-alpha.57":
+  version "1.0.0-alpha.57"
+  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.57.tgz#de877680d5265f3660a9d7932f32c0f14efb27e8"
+  integrity sha512-LZTo8DPabfRBjcFcj6N1rWuIexK967wR6O0sLAg8NbaB25pgiAXA/n0fqk/GVZrOmxQyEfdSUgkLTwM+iijfGA==
   dependencies:
-    "@huddle01/web-core" "1.0.0-alpha.37"
+    "@huddle01/web-core" "1.0.0-alpha.54"
     "@tanstack/react-query" "^4.32.6"
     "@testing-library/react" "^14.0.0"
     "@testing-library/react-hooks" "^8.0.1"
     axios "^1.5.1"
     react "18.2.0"
 
-"@huddle01/server-sdk@^1.0.0-alpha.19":
-  version "1.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-1.0.0-alpha.19.tgz#c1392094864a7d079bdbd49980db01a379d5b77b"
-  integrity sha512-p/LOk+BcGCP8awtOjQvRAqZEXDnLgqY5AuF8hH0KxyDbcMgOPBCN2T+KtPCH5NBF+s3QSJ2YKsTXKbAopsz2VQ==
+"@huddle01/server-sdk@^1.0.0-alpha.25":
+  version "1.0.0-alpha.25"
+  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-1.0.0-alpha.25.tgz#58874595a55059b63cf8ec97800727ec26424da7"
+  integrity sha512-ZCA2n2ZXkjkx6iFq7JXmjqTaGcRtoc8g+Jb+dr5GdWPIwkV4emtkH8xw5MKN9jyMDEXlmoG2kpFh1rgKQzRIXw==
   dependencies:
     axios "^1.5.1"
     jose "^4.14.6"
     zod "^3.22.4"
 
-"@huddle01/web-core@1.0.0-alpha.37", "@huddle01/web-core@^1.0.0-alpha.37":
+"@huddle01/web-core@1.0.0-alpha.54":
+  version "1.0.0-alpha.54"
+  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.54.tgz#8a37ac87a2e3321a50a6bae41fb56cc47bdd6cff"
+  integrity sha512-phoScRHUgksPGZp57bXBVeBNe1DM8ZJZ/pBUYHOn6S+3y08EISwMoM6pRZi0lL/wGwb9rKSqrdw4jDNZa4CQkQ==
+  dependencies:
+    mediasoup-client "^3.6.98"
+    tslog "^4.9.1"
+    zod "^3.22.1"
+
+"@huddle01/web-core@^1.0.0-alpha.37":
   version "1.0.0-alpha.37"
   resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.37.tgz#79bbf7c37df7191566deacbf269ea4bf71948d75"
   integrity sha512-OQTltjgIfyM8/sP5sqMydUD5Z038YPFuaI7jP9S9RwspuXFREB0OrIFmDn/ByjFGEwr90tcGR3U5GVcdk6ip7Q==

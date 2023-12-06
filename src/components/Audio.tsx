@@ -1,21 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
-interface IAudioProps {
-  track?: MediaStreamTrack;
+interface Props {
+  deviceId?: string;
+  track: MediaStreamTrack | null;
 }
 
 type HTMLAudioElementWithSetSinkId = HTMLAudioElement & {
   setSinkId: (id: string) => void;
 };
 
-const Audio: React.FC<
-  IAudioProps &
-    React.DetailedHTMLProps<
-      React.AudioHTMLAttributes<HTMLAudioElementWithSetSinkId>,
-      HTMLAudioElementWithSetSinkId
-    >
-> = ({ track }) => {
-  const audioRef = useRef<HTMLAudioElement>(null);
+const PeerAudioElem: React.FC<Props> = ({ track }) => {
+  const audioElem = useRef<HTMLAudioElementWithSetSinkId>(null);
 
   const getStream = (_track: MediaStreamTrack) => {
     const stream = new MediaStream();
@@ -24,25 +19,21 @@ const Audio: React.FC<
   };
 
   useEffect(() => {
-    const audioObj = audioRef.current;
+    const audioRef = audioElem.current;
 
-    if (audioObj && track) {
-      audioObj.srcObject = getStream(track);
-      audioObj.onloadedmetadata = async () => {
-        console.warn('audioCard() | Metadata loaded...');
-        try {
-          await audioObj.play();
-        } catch (error) {
-          console.error(error);
-        }
-      };
-      audioObj.onerror = () => {
-        console.error('audioCard() | Error is hapenning...');
-      };
+    if (track && audioRef) {
+      audioRef.load();
+      audioRef.srcObject = getStream(track);
     }
-  }, []);
 
-  return <audio ref={audioRef}>Audio</audio>;
+    return () => {
+      if (audioRef) {
+        audioRef.srcObject = null;
+      }
+    };
+  }, [audioElem.current, track]);
+
+  return <audio autoPlay playsInline controls={false} ref={audioElem} />;
 };
 
-export default Audio;
+export default React.memo(PeerAudioElem);

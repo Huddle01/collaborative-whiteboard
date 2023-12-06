@@ -19,7 +19,6 @@ import { YKeyValue } from 'y-utility/y-keyvalue'
 import { WebsocketProvider } from 'y-websocket'
 import * as Y from 'yjs'
 import { DEFAULT_STORE } from './default_store'
-import { useDataMessage } from '@huddle01/react/hooks'
 
 export function useYjsStore({
 	roomId,
@@ -54,13 +53,6 @@ export function useYjsStore({
 			room: new WebsocketProvider(hostUrl, roomId, yDoc, { connect: true }),
 		}
 	}, [hostUrl, roomId])
-
-	const { sendData } = useDataMessage({
-		onMessage(payload, from, label) {
-		  // Handle incoming messages here
-		  console.log('Received message:', payload, 'from:', from, 'with label:', label);
-		},
-	  });
 
 	useEffect(() => {
 		setStoreWithStatus({ status: 'loading' })

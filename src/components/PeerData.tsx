@@ -25,10 +25,6 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
     peerId,
   });
 
-  const { track: mic } = useRemoteAudio({
-    peerId,
-  });
-
   const [cursorPosition, setCursorPosition] = useState({
     top: 0,
     left: 0,
@@ -40,7 +36,7 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
         const { top, left } = JSON.parse(payload);
         setCursorPosition({
           top: top,
-          left: left
+          left: left,
         });
       }
     },
@@ -53,7 +49,7 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
       style={{
         position: 'absolute',
         ...cursorPosition,
-        zIndex: 1000
+        zIndex: 1000,
       }}
     >
       <div className="flex relative w-32 h-28 rounded-lg bg-gray-200 justify-center items-center">
@@ -74,7 +70,7 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
         >
           {metadata.displayName ?? 'Guest'}
         </div>
-        {mic && <Audio track={mic} />}
+        {<Audio peerId={peerId} />}
       </div>
     </div>
   );

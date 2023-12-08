@@ -1,39 +1,44 @@
 import React, { useEffect, useRef } from 'react';
+import { useRemoteAudio } from '@huddle01/react/hooks';
 
 interface Props {
-  deviceId?: string;
-  track: MediaStreamTrack | null;
+  peerId: string;
 }
 
-type HTMLAudioElementWithSetSinkId = HTMLAudioElement & {
-  setSinkId: (id: string) => void;
-};
+const PeerAudioElem: React.FC<Props> = ({ peerId }) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-const PeerAudioElem: React.FC<Props> = ({ track }) => {
-  const audioElem = useRef<HTMLAudioElementWithSetSinkId>(null);
-
-  const getStream = (_track: MediaStreamTrack) => {
-    const stream = new MediaStream();
-    stream.addTrack(_track);
-    return stream;
-  };
+  const { stream, state } = useRemoteAudio({
+    peerId,
+    onPlayable(data) {
+      console.log('onPlayable', data);
+    },
+  });
 
   useEffect(() => {
-    const audioRef = audioElem.current;
+    console.warn('stream', { state, stream, c: audioRef.current });
+    if (stream && audioRef.current && state === 'playable') {
+      console.warn('----------------------------------');
+      console.warn({ stream });
+      console.warn('----------------------------------');
+      audioRef.current.srcObject = stream;
 
-    if (track && audioRef) {
-      audioRef.load();
-      audioRef.srcObject = getStream(track);
+      audioRef.current.onloadedmetadata = async () => {
+        try {
+          console.log('here ');
+          audioRef.current?.play();
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      audioRef.current.onerror = () => {
+        console.error('videoCard() | Error is hapenning...');
+      };
     }
+  }, [stream, state]);
 
-    return () => {
-      if (audioRef) {
-        audioRef.srcObject = null;
-      }
-    };
-  }, [audioElem.current, track]);
-
-  return <audio autoPlay playsInline controls={false} ref={audioElem} />;
+  return <audio ref={audioRef} autoPlay></audio>;
 };
 
-export default React.memo(PeerAudioElem);
+export default PeerAudioElem;

@@ -442,12 +442,12 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
-"@huddle01/react@^1.0.0-alpha.57":
-  version "1.0.0-alpha.57"
-  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.57.tgz#de877680d5265f3660a9d7932f32c0f14efb27e8"
-  integrity sha512-LZTo8DPabfRBjcFcj6N1rWuIexK967wR6O0sLAg8NbaB25pgiAXA/n0fqk/GVZrOmxQyEfdSUgkLTwM+iijfGA==
+"@huddle01/react@^1.0.0-alpha.58":
+  version "1.0.0-alpha.58"
+  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.58.tgz#e68d53781959a98904b4d1fc3e7e2a949b900e10"
+  integrity sha512-SlUVIEUWuxUc0HFyN2gGBhIxrZYs7AK+xIH6qxYE/oTilSEfcrTd3DCkfcLzj1PiMPfR+/WX2bXx4USau7Wnpg==
   dependencies:
-    "@huddle01/web-core" "1.0.0-alpha.54"
+    "@huddle01/web-core" "1.0.0-alpha.55"
     "@tanstack/react-query" "^4.32.6"
     "@testing-library/react" "^14.0.0"
     "@testing-library/react-hooks" "^8.0.1"
@@ -463,19 +463,10 @@
     jose "^4.14.6"
     zod "^3.22.4"
 
-"@huddle01/web-core@1.0.0-alpha.54":
-  version "1.0.0-alpha.54"
-  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.54.tgz#8a37ac87a2e3321a50a6bae41fb56cc47bdd6cff"
-  integrity sha512-phoScRHUgksPGZp57bXBVeBNe1DM8ZJZ/pBUYHOn6S+3y08EISwMoM6pRZi0lL/wGwb9rKSqrdw4jDNZa4CQkQ==
-  dependencies:
-    mediasoup-client "^3.6.98"
-    tslog "^4.9.1"
-    zod "^3.22.1"
-
-"@huddle01/web-core@^1.0.0-alpha.37":
-  version "1.0.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.37.tgz#79bbf7c37df7191566deacbf269ea4bf71948d75"
-  integrity sha512-OQTltjgIfyM8/sP5sqMydUD5Z038YPFuaI7jP9S9RwspuXFREB0OrIFmDn/ByjFGEwr90tcGR3U5GVcdk6ip7Q==
+"@huddle01/web-core@1.0.0-alpha.55":
+  version "1.0.0-alpha.55"
+  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.55.tgz#0a1df3a3f388a1993a41ad790f65b4836c78b1b3"
+  integrity sha512-XePIF1VxQF5IQ1QpIKXg/k3aVHrAHKCVW/3pRTs1iZo9gf5QF2bT9VGZLbw9yBatN2+0ROQBv1fTYvd1a0BM0w==
   dependencies:
     mediasoup-client "^3.6.98"
     tslog "^4.9.1"

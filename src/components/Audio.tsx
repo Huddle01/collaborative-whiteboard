@@ -18,9 +18,6 @@ const PeerAudioElem: React.FC<Props> = ({ peerId }) => {
   useEffect(() => {
     console.warn('stream', { state, stream, c: audioRef.current });
     if (stream && audioRef.current && state === 'playable') {
-      console.warn('----------------------------------');
-      console.warn({ stream });
-      console.warn('----------------------------------');
       audioRef.current.srcObject = stream;
 
       audioRef.current.onloadedmetadata = async () => {

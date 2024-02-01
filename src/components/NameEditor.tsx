@@ -2,7 +2,6 @@ import { useLocalPeer, useRoom } from '@huddle01/react/hooks';
 import { track } from '@tldraw/tldraw';
 import ShowPeers from './ShowPeers';
 import { FC, useEffect } from 'react';
-import { AccessToken, Role } from '@huddle01/server-sdk/auth';
 import { useNavigate } from 'react-router-dom';
 import { useMeetStore } from '../store/meet';
 import LocalPeerData from './LocalPeerData';
@@ -20,7 +19,6 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
 
   const { joinRoom, state: roomState } = useRoom({
     onJoin: () => {
-      
       updateMetadata({
         displayName: displayName,
         avatarUrl: `/0.png`,
@@ -54,11 +52,9 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
       }
     );
     const data = await response.json();
+    console.log(data.data.roomId);
 
-    console.log({data});
-    
     const userToken = await createAccessToken(data.data.roomId);
-    console.log("userToken", userToken)
     await joinRoom({
       roomId: data.data.roomId,
       token: userToken,
@@ -67,37 +63,19 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
   };
 
   const createAccessToken = async (userRoomId: string) => {
-    console.log("userRoomId", import.meta.env.VITE_API_HUDDLE01_API_KEY);
-    const accessToken = new AccessToken({
-      apiKey: import.meta.env.VITE_API_HUDDLE01_API_KEY ?? '',
-      roomId: userRoomId,
-      // role: data.previewPeers.length > 0 ? Role.LISTENER : Role.HOST,
-      role: Role.HOST,
-      permissions: {
-        admin: true,
-        canConsume: true,
-        canProduce: true,
-        canProduceSources: { cam: true, mic: true, screen: true },
-        canRecvData: true,
-        canSendData: true,
-        canUpdateMetadata: true,
-      },
-    });
-    const userToken = await accessToken.toJwt();
-    console.log("userToken", userToken);
-    return userToken;
+    const tokenResponse = await fetch(
+      `https://alpha-sdk-example-ts.vercel.app/api/getAccessToken?roomId=${userRoomId}`
+    );
+    const token = await tokenResponse.json();
+    return token.token;
   };
-
-  // const handleJoinRoom = async () => {
-  //   const token = await createAccessToken()
-  // }
 
   return (
     <div style={{ pointerEvents: 'all', display: 'flex' }}>
-      <div className="flex m-2 justify-center">
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-4">
-            <div className="flex flex-col items-center gap-2">
+      <div className='flex m-2 justify-center'>
+        <div className='flex flex-col gap-4'>
+          <div className='flex gap-4'>
+            <div className='flex flex-col items-center gap-2'>
               {roomId && metadata?.displayName ? (
                 <LocalPeerData />
               ) : (
@@ -109,11 +87,11 @@ const NameEditor: FC<NameEditorProps> = track(({ roomId }) => {
                         onChange={(e) => {
                           setDisplayName(e.target.value);
                         }}
-                        placeholder="Enter you name"
-                        className="rounded-lg border-2 border-gray-200 p-2"
+                        placeholder='Enter you name'
+                        className='rounded-lg border-2 border-gray-200 p-2'
                       />
                       <button
-                        className="rounded-lg bg-blue-500 w-full p-2 text-white"
+                        className='rounded-lg bg-blue-500 w-full p-2 text-white'
                         onClick={async () => {
                           if (roomId) {
                             const userToken = await createAccessToken(roomId);

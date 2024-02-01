@@ -442,34 +442,33 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
-"@huddle01/react@^1.0.0-alpha.58":
-  version "1.0.0-alpha.58"
-  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-1.0.0-alpha.58.tgz#e68d53781959a98904b4d1fc3e7e2a949b900e10"
-  integrity sha512-SlUVIEUWuxUc0HFyN2gGBhIxrZYs7AK+xIH6qxYE/oTilSEfcrTd3DCkfcLzj1PiMPfR+/WX2bXx4USau7Wnpg==
+"@huddle01/react@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@huddle01/react/-/react-2.0.0.tgz#658d8001ac50e1f209304ced817fcea469fd3b8b"
+  integrity sha512-P1IrFc7akQwVTmYXpOwn/yikO+LdUS2uhXgfZQOxKzsWy9pyHNQyKqXktxXlFXM1eILbOMr9F+o5IPmNYl4+bg==
   dependencies:
-    "@huddle01/web-core" "1.0.0-alpha.55"
+    "@huddle01/web-core" "2.0.0"
     "@tanstack/react-query" "^4.32.6"
     "@testing-library/react" "^14.0.0"
     "@testing-library/react-hooks" "^8.0.1"
     axios "^1.5.1"
     react "18.2.0"
 
-"@huddle01/server-sdk@^1.0.0-alpha.25":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-1.0.0-alpha.25.tgz#58874595a55059b63cf8ec97800727ec26424da7"
-  integrity sha512-ZCA2n2ZXkjkx6iFq7JXmjqTaGcRtoc8g+Jb+dr5GdWPIwkV4emtkH8xw5MKN9jyMDEXlmoG2kpFh1rgKQzRIXw==
+"@huddle01/server-sdk@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@huddle01/server-sdk/-/server-sdk-2.0.0.tgz#ceeb00d92e42f9bc9462c5ce714e898e6237a7db"
+  integrity sha512-xSXNTzaBYce57cVz4kEAN/FNgwfd9rCWzpaysB/WQiIOpabXiRBwbctH53ggFKOjQ0GfaO+/MeC2A/yv9uUEHw==
   dependencies:
     axios "^1.5.1"
     jose "^4.14.6"
     zod "^3.22.4"
 
-"@huddle01/web-core@1.0.0-alpha.55":
-  version "1.0.0-alpha.55"
-  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-1.0.0-alpha.55.tgz#0a1df3a3f388a1993a41ad790f65b4836c78b1b3"
-  integrity sha512-XePIF1VxQF5IQ1QpIKXg/k3aVHrAHKCVW/3pRTs1iZo9gf5QF2bT9VGZLbw9yBatN2+0ROQBv1fTYvd1a0BM0w==
+"@huddle01/web-core@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@huddle01/web-core/-/web-core-2.0.0.tgz#7eb0a28f0e2d7365068acbdbeabd25e765b7a32a"
+  integrity sha512-oRV1UhnH6AekObukGQPBIiNzzF7KqWfvdlKnBfs7gQPOZ4vEIkVCrw8l/F88NVOfpgbDR26SHxtd85L71sP87g==
   dependencies:
-    mediasoup-client "^3.6.98"
-    tslog "^4.9.1"
+    mediasoup-client "^3.7.2"
     zod "^3.22.1"
 
 "@humanwhocodes/config-array@^0.11.10":
@@ -1253,10 +1252,10 @@
   resolved "https://registry.npmjs.org/@types/core-js/-/core-js-2.5.5.tgz"
   integrity sha512-C4vwOHrhsvxn7UFyk4NDQNUpgNKdWsT/bL39UWyD75KSEOObZSKa9mYDOCM5FGeJG2qtbG0XiEbUKND2+j0WOg==
 
-"@types/debug@^4.1.10":
-  version "4.1.10"
-  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.10.tgz#f23148a6eb771a34c466a4fc28379d8101e84494"
-  integrity sha512-tOSCru6s732pofZ+sMv9o4o3Zc+Sa8l3bxd/tweTQudFn06vAzb13ZX46Zi6m6EJ+RUbRTHvgQJ1gBtSgkaUYA==
+"@types/debug@^4.1.12":
+  version "4.1.12"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.12.tgz#a155f21690871953410df4b6b6f53187f0500917"
+  integrity sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==
   dependencies:
     "@types/ms" "*"
 
@@ -2321,12 +2320,13 @@ graphemer@^1.4.0:
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
-h264-profile-level-id@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/h264-profile-level-id/-/h264-profile-level-id-1.0.1.tgz#92033c190766c846e57c6a97e4c1d922943a9cce"
-  integrity sha512-D3Rln/jKNjKDW5ZTJTK3niSoOGE+pFqPvRHHVgQN3G7umcn/zWGPUo8Q8VpDj16x3hKz++zVviRNRmXu5cpN+Q==
+h264-profile-level-id@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/h264-profile-level-id/-/h264-profile-level-id-2.0.0.tgz#b7ea45badbac8f5dbb9583d34b06db09764f2535"
+  integrity sha512-X4CLryVbVA0CtjTExS4G5U1gb2Z4wa32AF8ukVmFuLdw2JRq2aHisor7SY5SYTUUrUSqq0KdPIO18sql6IWIQw==
   dependencies:
-    debug "^4.1.1"
+    "@types/debug" "^4.1.12"
+    debug "^4.3.4"
 
 has-bigints@^1.0.1:
   version "1.0.2"
@@ -2836,21 +2836,21 @@ lz-string@^1.4.4, lz-string@^1.5.0:
   resolved "https://registry.npmjs.org/lz-string/-/lz-string-1.5.0.tgz"
   integrity sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==
 
-mediasoup-client@^3.6.98:
-  version "3.6.103"
-  resolved "https://registry.yarnpkg.com/mediasoup-client/-/mediasoup-client-3.6.103.tgz#0aae9e75b6fcc4cdfd73e5e9c94bd6d5300bb85c"
-  integrity sha512-njbRpcdlqYaJwAE92pWV9uJxMg5aA3YFetCdwXY0l285pA/tDr7hSM22cczAHLx50C1DODL8/uBVqq+fDMMEmw==
+mediasoup-client@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/mediasoup-client/-/mediasoup-client-3.7.2.tgz#fca5d773558e027e4a9fa901752d7b65d141c38b"
+  integrity sha512-KNJZ7r3EV5XgmkH6nyvtBZxoTwhOgasjdB32MQ2z56Qh9/mP8jKHPEFQW0dVvb4N1CpxzRGQTnXKkBkS1OgDFw==
   dependencies:
-    "@types/debug" "^4.1.10"
+    "@types/debug" "^4.1.12"
     awaitqueue "^3.0.2"
     debug "^4.3.4"
     events "^3.3.0"
     fake-mediastreamtrack "^1.2.0"
-    h264-profile-level-id "^1.0.1"
+    h264-profile-level-id "^2.0.0"
     queue-microtask "^1.2.3"
     sdp-transform "^2.14.1"
     supports-color "^9.4.0"
-    ua-parser-js "^1.0.36"
+    ua-parser-js "^1.0.37"
 
 merge2@^1.3.0, merge2@^1.4.1:
   version "1.4.1"
@@ -3586,11 +3586,6 @@ tslib@^2.0.0, tslib@^2.1.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.1.tgz"
   integrity sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
 
-tslog@^4.9.1:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/tslog/-/tslog-4.9.2.tgz#35de3a073784dfe3849caeaa028010c7a62b7f4a"
-  integrity sha512-wBM+LRJoNl34Bdu8mYEFxpvmOUedpNUwMNQB/NcuPIZKwdDde6xLHUev3bBjXQU7gdurX++X/YE7gLH8eXYsiQ==
-
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz"
@@ -3608,10 +3603,10 @@ typescript@^5.0.2:
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.1.6.tgz"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
 
-ua-parser-js@^1.0.36:
-  version "1.0.36"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.36.tgz#a9ab6b9bd3a8efb90bb0816674b412717b7c428c"
-  integrity sha512-znuyCIXzl8ciS3+y3fHJI/2OhQIXbXw9MWC/o3qwyR+RGppjZHrM27CGFSKCJXi2Kctiz537iOu2KnXs1lMQhw==
+ua-parser-js@^1.0.37:
+  version "1.0.37"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.37.tgz#b5dc7b163a5c1f0c510b08446aed4da92c46373f"
+  integrity sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==
 
 update-browserslist-db@^1.0.11:
   version "1.0.11"

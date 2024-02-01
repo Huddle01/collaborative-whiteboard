@@ -1,6 +1,5 @@
 import {
   useDataMessage,
-  useRemoteAudio,
   useRemotePeer,
   useRemoteVideo,
 } from '@huddle01/react/hooks';
@@ -52,12 +51,12 @@ const PeerData: React.FC<Props> = ({ peerId }) => {
         zIndex: 1000,
       }}
     >
-      <div className="flex relative w-32 h-28 rounded-lg bg-gray-200 justify-center items-center">
+      <div className='flex relative w-32 h-28 rounded-lg bg-gray-200 justify-center items-center'>
         {isVideoOn ? (
           <VideoElem track={cam} />
         ) : (
           <img
-            className="w-16 h-16 rounded-full"
+            className='w-16 h-16 rounded-full'
             src={metadata.avatarUrl}
             alt={metadata.displayName}
           />
